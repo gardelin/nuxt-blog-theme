@@ -1,0 +1,8 @@
+<template>
+    <section class="flex items-center justify-center text-center w-full h-screen">
+        <header>
+            <h1 class="font-black text-8xl">Welcome to my site</h1>
+            <p>Take a look at <NuxtLink to="/articles">my articles</NuxtLink></p>
+        </header>
+    </section>
+</template>

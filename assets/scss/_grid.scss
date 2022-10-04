@@ -1,0 +1,25 @@
+.nuxt {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    align-content: space-between;
+}
+
+header.site-header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    padding: 100px 0;
+}
+
+footer {
+    grid-area: footer;
+    height: 80px;
+    background-color: rgba(67, 56, 202, 0.05);
+}
