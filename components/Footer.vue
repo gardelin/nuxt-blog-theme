@@ -41,7 +41,3 @@
         </div>
     </footer>
 </template>
-
-<script setup>
-    import VueSocial from '@growthbunker/vuesocial';
-</script>
