@@ -14,10 +14,6 @@
 </template>
 
 <script setup>
-    definePageMeta({
-        pageTransition: false,
-    });
-
     let props = defineProps(['links']);
 
     const flattenLinks = links => {
