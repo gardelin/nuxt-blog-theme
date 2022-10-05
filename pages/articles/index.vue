@@ -30,7 +30,7 @@
 
     const fetchArticles = async page => {
         return queryContent('articles')
-            .only(['title', 'description', 'tags', '_path', 'img'])
+            .only(['title', 'description', 'tags', '_path', 'featuredImage'])
             .sort({ date: 'desc' })
             .skip(limit * (page - 1))
             .limit(limit)

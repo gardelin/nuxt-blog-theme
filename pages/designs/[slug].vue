@@ -1,8 +1,8 @@
 <template>
     <main id="main" class="p-4 max-w-5xl m-auto">
         <header v-if="data.article" class="p-4 pb-12">
-            <div v-if="data.article.img" class="img-cont h-72 mb-12">
-                <img :src="`/${data.article.img}`" :alt="data.article.title" class="rounded-2xl" />
+            <div v-if="data.article.featuredImage" class="img-cont h-72 mb-12">
+                <img :src="`${data.article.featuredImage}`" :alt="data.article.title" class="rounded-2xl" />
             </div>
             <h1 class="font-extrabold text-5xl">{{ data.article.title }}</h1>
             <p class="font-medium text-lg">{{ data.article.description }}</p>

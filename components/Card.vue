@@ -6,8 +6,8 @@
         </h2>
         <p class="article-description">{{ item.description }}</p>
         <div class="flex items-center gap-2">
-            <p class="article-date" v-if="item.createdAt">
-                {{ $formatDate(item.createdAt) }}
+            <p class="article-date" v-if="item.publishDate">
+                {{ $formatDate(item.publishDate) }}
             </p>
             <ul class="flex gap-3 flex-wrap">
                 <li v-for="(tag, n) in item.tags" :key="n">
