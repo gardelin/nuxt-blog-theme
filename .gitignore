@@ -8,3 +8,5 @@ node_modules
 
 content/articles
 content/designs
+# Local Netlify folder
+.netlify
