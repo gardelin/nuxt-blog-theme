@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image-edge',
     '@vueuse/nuxt',
+    'nuxt-icon',
   ],
   content: {
     // https://content.nuxtjs.org/api/configuration
@@ -28,6 +29,4 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ""
   },
-  // https://v1.image.nuxtjs.org/configuration
-  // image: {},
 })

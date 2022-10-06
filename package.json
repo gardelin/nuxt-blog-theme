@@ -17,6 +17,7 @@
     "@vueuse/nuxt": "^9.3.0",
     "heroicons": "^2.0.11",
     "nuxt": "^3.0.0-rc.11",
+    "nuxt-icon": "^0.1.6",
     "react-social-icons": "^5.15.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
