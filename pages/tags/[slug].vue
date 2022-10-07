@@ -7,7 +7,7 @@
 
         <section class="page-section">
             <div v-if="paginatedArticles.length && total >= limit * page - limit" class="flex flex-col gap-6">
-                <ArticleCard :item="article" v-for="article in paginatedArticles" :key="article._path" />
+                <Card :item="article" v-for="article in paginatedArticles" :key="article._path" />
                 <Pagination :total="total" :limit="limit" />
             </div>
 
