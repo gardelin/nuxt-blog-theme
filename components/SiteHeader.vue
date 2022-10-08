@@ -1,6 +1,6 @@
 <template>
     <header class="site-header" :class="{ 'header-sticky': sticky }">
-        <div class="flex items-center justify-between max-w-6xl m-auto">
+        <div class="flex items-center justify-between max-w-7xl m-auto">
             <NuxtLink to="/" class="no-underline">
                 <figure class="site-logo">
                     <img v-if="useColorMode().value === 'light'" src="/assets/img/logo.png" style="height: 40px" alt="" />
@@ -31,7 +31,7 @@
     const sticky = ref(false);
 
     onMounted(() => {
-        const siteHeader = document.querySelector(".site-header");
+        const siteHeader = document.querySelector('.site-header');
 
         const onScroll = () => {
             if (window.scrollY > siteHeader.offsetHeight) {
@@ -41,7 +41,7 @@
             }
         };
 
-        window.addEventListener("scroll", onScroll);
+        window.addEventListener('scroll', onScroll);
     });
 </script>
 

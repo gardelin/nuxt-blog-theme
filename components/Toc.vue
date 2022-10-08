@@ -1,7 +1,7 @@
 <template>
-    <nav class="p-4 max-h-[calc(100vh-6rem)] overflow-auto sticky top-20">
+    <nav class="pl-4 pt-4 max-h-[calc(100vh-6rem)] overflow-auto sticky top-20">
         <header class="pb-2 mb-2">
-            <h3 class="text-xl font-bold">Table of contents</h3>
+            <h3 class="text-md font-bold">Table of contents</h3>
         </header>
         <ul class="flex flex-col gap-2">
             <li v-for="link of flattenLinks(links)" :key="link.id" :class="`text-slate-500 _${link.depth}`">
@@ -48,7 +48,7 @@
                         activeHeadings.value = activeHeadings.value.filter(item => ![id].includes(item));
                     }
                 });
-            }, 1);
+            }, 100);
         });
     });
 </script>
@@ -67,6 +67,6 @@
     }
 
     .active {
-        @apply text-indigo-700;
+        @apply text-indigo-400;
     }
 </style>

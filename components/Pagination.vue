@@ -31,7 +31,7 @@
     let showPrev = ref(page > 1);
     let showNext = ref(page < props.total / props.limit);
 
-    const isActive = (n) => {
+    const isActive = n => {
         let page = route.query.page || 1;
 
         if (page == n) {
@@ -43,7 +43,7 @@
 
     watch(
         () => route.query.page,
-        (page) => {
+        page => {
             if (page > 1) {
                 showPrev.value = true;
             } else {
@@ -87,6 +87,6 @@
     }
 
     .disabled {
-        @apply text-white bg-white dark:bg-zinc-900 dark:text-zinc-900 cursor-not-allowed pointer-events-none;
+        @apply invisible text-white bg-white dark:bg-zinc-900 dark:text-zinc-900 cursor-not-allowed pointer-events-none;
     }
 </style>
