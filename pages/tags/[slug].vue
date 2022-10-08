@@ -1,8 +1,7 @@
 <template>
     <main class="mx-auto max-w-3xl w-full">
         <section class="text-center mb-10">
-            <h1 class="page-title">All with "{{ tag }}" tag</h1>
-            <p class="font-medium text-lg">Here's a list of all articles</p>
+            <h1 class="page-title">Tag: {{ tag }}</h1>
         </section>
 
         <section class="page-section">
