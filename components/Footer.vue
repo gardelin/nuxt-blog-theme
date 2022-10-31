@@ -3,13 +3,16 @@
         <div class="flex w-full items-center justify-between mx-auto max-w-6xl">
             <p>© {{ new Date().getFullYear() }} rlab</p>
             <div class="flex gap-6">
-                <a v-if="appConfig.socials?.dribbble" :href="appConfig.socials.dribbble" target="_blank">
+                <a v-if="config?.email" :href="`mailto:${config.email}`" target="_blank">
+                    <Icon name="ic:outline-email" />
+                </a>
+                <a v-if="config?.dribbble" :href="config.dribbble" target="_blank">
                     <Icon name="fa-brands:dribbble" />
                 </a>
-                <a v-if="appConfig.socials?.github" :href="appConfig.socials.github" target="_blank">
+                <a v-if="config?.github" :href="config.github" target="_blank">
                     <Icon name="fa-brands:github" />
                 </a>
-                <a v-if="appConfig.socials?.linkedin" :href="appConfig.socials.linkedin" target="_blank">
+                <a v-if="config?.linkedin" :href="config.linkedin" target="_blank">
                     <Icon name="fa-brands:linkedin" />
                 </a>
             </div>
@@ -18,5 +21,5 @@
 </template>
 
 <script setup>
-    const appConfig = useAppConfig();
+    const config = useRuntimeConfig();
 </script>

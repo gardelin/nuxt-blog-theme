@@ -24,6 +24,10 @@ export default defineNuxtConfig({
             getFormId: process.env.SITE_GET_FORM_ID,
             recaptchaKey: process.env.SITE_RECAPTCHA_KEY,
             recaptchaSecret: process.env.SITE_RECAPTCHA_SECRET,
+            dribbble: process.env.DRIBBBLE,
+            linkedin: process.env.LINKEDIN,
+            email: process.env.EMAIL,
+            github: process.env.GITHUB,
         },
     },
 });
