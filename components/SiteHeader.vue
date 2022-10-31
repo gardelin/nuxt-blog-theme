@@ -16,6 +16,9 @@
                     <li class="link">
                         <NuxtLink to="/designs" class="no-underline text-slate-900 dark:text-slate-100">Designs</NuxtLink>
                     </li>
+                    <li class="link">
+                        <NuxtLink to="/contact" class="no-underline text-slate-900 dark:text-slate-100">Contact</NuxtLink>
+                    </li>
                     <li>
                         <ThemeSwitcher />
                     </li>

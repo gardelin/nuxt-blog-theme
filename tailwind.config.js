@@ -10,9 +10,6 @@ module.exports = {
                 header: ['Inter', ...defaultTheme.fontFamily.sans],
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
-            colors: {
-                tutti: 'green',
-            },
         },
     },
     darkMode: 'class',
@@ -20,6 +17,7 @@ module.exports = {
         backgroundColor: ['hover', 'dark', 'dark-hover'],
         borderColor: ['hover', 'dark', 'dark-hover'],
         textColor: ['hover', 'dark', 'dark-hover'],
+        opacity: ['disabled'],
     },
     plugins: [require('@tailwindcss/typography'), require('tailwindcss-dark-mode')()],
 };
