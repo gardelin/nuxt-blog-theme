@@ -2,7 +2,8 @@
 title: My first article
 description: Some Description for first article
 tags:
-  - asd
+  - bla
+  - test
 date: 2022-10-05T16:28:36.445Z
 featuredImage: https://images.unsplash.com/photo-1583157701362-f20590ffaa6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
 ---
