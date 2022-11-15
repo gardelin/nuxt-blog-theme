@@ -1,3 +1,5 @@
+import svgLoader from 'vite-svg-loader';
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/image-edge', '@vueuse/nuxt', 'nuxt-icon'],
@@ -28,6 +30,11 @@ export default defineNuxtConfig({
             linkedin: process.env.LINKEDIN,
             email: process.env.EMAIL,
             github: process.env.GITHUB,
-            soundcloud: process.env.SOUNDCLOUD,        },
+            soundcloud: process.env.SOUNDCLOUD,
+        },
     },
+    vite: {
+        plugins: [svgLoader()],
+    },
+    pageTransition: { name: 'page', mode: 'out-in' },
 });
