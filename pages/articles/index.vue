@@ -1,13 +1,15 @@
 <template>
-    <main class="mx-auto max-w-3xl w-full">
-        <section class="text-center mb-10">
+    <main class="mx-auto max-w-6xl w-full px-14">
+        <section class="text-center mb-9">
             <h1 class="page-title">Articles</h1>
         </section>
 
-        <section class="page-section">
-            <div v-if="paginatedArticles.length && total >= limit * page - limit" class="flex flex-col gap-6">
+        <section class="page-section h-full">
+            <div v-if="paginatedArticles.length && total >= limit * page - limit" class="flex flex-col gap-6 h-full">
                 <Tags />
-                <Card :item="article" v-for="article in paginatedArticles" :key="article._path" />
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <Card :item="article" v-for="article in paginatedArticles" :key="article._path" />
+                </div>
                 <Pagination :total="total" :limit="limit" />
             </div>
 
@@ -29,7 +31,7 @@
 
     const fetchArticles = async page => {
         return queryContent('articles')
-            .only(['title', 'description', 'tags', '_path', 'featuredImage'])
+            .only(['title', 'description', 'tags', '_path', 'featuredImage', 'date'])
             .sort({ date: 'desc' })
             .skip(limit * (page - 1))
             .limit(limit)

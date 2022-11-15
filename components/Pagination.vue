@@ -1,5 +1,5 @@
 <template>
-    <section class="flex justify-center mt-4 space-x-2">
+    <section class="flex justify-center mt-4 space-x-2 mb-10 mt-auto">
         <ul v-if="total">
             <li class="prev">
                 <NuxtLink :class="{ disabled: !showPrev }" :to="{ query: { page: parseInt($route.query.page) - 1 } }">Prev</NuxtLink>

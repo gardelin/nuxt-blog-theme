@@ -1,59 +1,62 @@
 <template>
-    <section>
-        <Script async :src="`https://www.google.com/recaptcha/api.js?render=${config.recaptchaKey}`"></Script>
-        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-            <section class="text-center mb-10">
-                <h1 class="page-title">Contact</h1>
-            </section>
+    <main class="mx-auto max-w-6xl w-full">
+        <section class="text-center mb-10">
+            <h1 class="page-title">Get in Touch</h1>
+        </section>
+        <section>
+            <Script async :src="`https://www.google.com/recaptcha/api.js?render=${config.recaptchaKey}`"></Script>
             <p class="mb-8 lg:mb-16 font-light text-center text-indigo-900 dark:text-indigo-200 sm:text-xl">
-                If you want to discuss a project you think I’d be a good fit for, or just want to have a chat, fill out my contact form.
+                Although I’m not currently looking for any new opportunities, my inbox is always open. <br />Whether you have a question or just want
+                to say hi, I’ll try my best to get back to you!
             </p>
-            <form class="space-y-8" accept-charset="UTF-8" v-on:submit.prevent="onSubmit()" method="POST">
+            <form class="space-y-8 max-w-xl mx-auto" accept-charset="UTF-8" v-on:submit.prevent="onSubmit()" method="POST">
                 <input type="hidden" id="captchaResponse" name="g-recaptcha-response" v-model="recaptchaToken" />
                 <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-300">E-mail</label>
+                    <label for="email" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-300 font-space-mono">E-mail</label>
                     <input
                         type="email"
                         v-model="email"
                         id="email"
-                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 rounded-lg shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
+                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
                         placeholder="your@email.com"
                     />
-                    <p v-if="errors.email" class="mt-2 text-red-500 text-xs italic">Please provide your email.</p>
+                    <p v-if="errors.email" class="mt-2 text-red-500 dark:text-red-500 text-xs italic font-space-mono">Please provide your email.</p>
                 </div>
                 <div>
-                    <label for="name" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-300">Name</label>
+                    <label for="name" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-300 font-space-mono">Name</label>
                     <input
                         type="text"
                         v-model="name"
                         id="name"
-                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 rounded-lg shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
+                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
                         placeholder="Your full name"
                     />
-                    <p v-if="errors.name" class="mt-2 text-red-500 text-xs italic">Please provide your full name.</p>
+                    <p v-if="errors.name" class="mt-2 text-red-500 dark:text-red-500 text-xs italic font-space-mono">
+                        Please provide your full name.
+                    </p>
                 </div>
                 <div>
-                    <label for="subject" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-300">Subject</label>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-300 font-space-mono">Subject</label>
                     <input
                         type="text"
                         v-model="subject"
                         id="subject"
-                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 rounded-lg shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
+                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
                         placeholder="Your subject"
                     />
-                    <p v-if="errors.subject" class="mt-2 text-red-500 text-xs italic">Please provide subject.</p>
+                    <p v-if="errors.subject" class="mt-2 text-red-500 dark:text-red-500 text-xs italic">Please provide subject.</p>
                 </div>
                 <div class="sm:col-span-2">
-                    <label for="message" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-400">Message</label>
+                    <label for="message" class="block mb-2 text-sm font-medium text-indigo-900 dark:text-indigo-400 font-space-mono">Message</label>
                     <textarea
                         id="message"
                         v-model="message"
                         rows="6"
-                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 rounded-lg shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
+                        class="block p-3 w-full text-sm text-indigo-900 bg-indigo-50 border border-indigo-50 shadow-sm placeholder-indigo-900 focus:border-indigo-900 dark:bg-indigo-700/10 dark:border-indigo-700/10 dark:placeholder-indigo-400 dark:text-white focus:outline-none dark:focus:border dark:focus:border-indigo-700 dark:shadow-sm-light"
                         placeholder="Your message"
                         type="text"
                     ></textarea>
-                    <p v-if="errors.message" class="mt-2 text-red-500 text-xs italic">Please provide message.</p>
+                    <p v-if="errors.message" class="mt-2 text-red-500 dark:text-red-500 text-xs italic font-space-mono">Please provide message.</p>
                 </div>
                 <p class="mt-2 text-xs text-indigo-900 dark:text-indigo-400">
                     This site is protected by reCAPTCHA and the
@@ -62,7 +65,7 @@
                 </p>
                 <button
                     type="submit"
-                    class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-indigo-700 sm:w-fit hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 disabled:opacity-75"
+                    class="border border-indigo-700 dark:border-indigo-400 px-7 py-4 mb-5 w-full text-indigo-700 dark:text-indigo-400 no-underline text-center font-space-mono hover:bg-indigo-400 hover:text-white hover:dark:text-white transition disabled:opacity-75"
                     :disabled="loading"
                 >
                     <icon v-if="loading" class="mr-2" name="line-md:loading-twotone-loop" />
@@ -83,8 +86,8 @@
                     {{ submitMessage }}
                 </div>
             </form>
-        </div>
-    </section>
+        </section>
+    </main>
 </template>
 
 <script setup>

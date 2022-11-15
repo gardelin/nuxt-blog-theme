@@ -1,13 +1,15 @@
 <template>
-    <main class="mx-auto max-w-3xl w-full">
+    <main class="mx-auto max-w-6xl w-full">
         <section class="text-center mb-10">
             <h1 class="page-title">Designs</h1>
         </section>
 
-        <section class="page-section">
-            <div v-if="paginatedDesigns.length && total >= limit * page - limit" class="flex flex-col gap-6">
+        <section class="page-section h-full">
+            <div v-if="paginatedDesigns.length && total >= limit * page - limit" class="flex flex-col gap-6 h-full">
                 <Tags />
-                <Card :item="design" v-for="design in paginatedDesigns" :key="design._path" />
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <Card :item="design" v-for="design in paginatedDesigns" :key="design._path" />
+                </div>
                 <Pagination :total="total" :limit="limit" />
             </div>
 

@@ -28,6 +28,6 @@ export default defineNuxtConfig({
             linkedin: process.env.LINKEDIN,
             email: process.env.EMAIL,
             github: process.env.GITHUB,
-        },
+            soundcloud: process.env.SOUNDCLOUD,        },
     },
 });
