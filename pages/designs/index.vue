@@ -8,7 +8,9 @@
             <div v-if="paginatedDesigns.length && total >= limit * page - limit" class="flex flex-col gap-6 h-full">
                 <Tags />
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <Card :item="design" v-for="design in paginatedDesigns" :key="design._path" />
+                    <TransitionGroup name="list">
+                        <Card :item="design" v-for="design in paginatedDesigns" :key="design._path" />
+                    </TransitionGroup>
                 </div>
                 <Pagination :total="total" :limit="limit" />
             </div>

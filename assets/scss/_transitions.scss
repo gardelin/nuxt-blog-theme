@@ -1,0 +1,29 @@
+
+.page-enter-active,
+.page-leave-active {
+    transition: all 100ms;
+}
+
+.page-enter-from,
+.page-leave-to {
+    opacity: 0;
+    filter: blur(1rem);
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 300ms ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    filter: blur(1rem);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+    display: none;
+}

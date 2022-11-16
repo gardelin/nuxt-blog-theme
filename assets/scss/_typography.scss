@@ -4,8 +4,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    @apply text-indigo-900 dark:text-indigo-200 no-underline;
+h6,
+table,
+th,
+ol,
+li,
+ul {
+    @apply text-indigo-900 dark:text-indigo-100 no-underline;
 }
 
 a {
