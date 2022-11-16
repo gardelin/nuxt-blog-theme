@@ -1,5 +1,5 @@
 <template>
-    <main class="mx-auto max-w-6xl w-full">
+    <main class="mx-auto max-w-7xl w-full">
         <section class="text-center mb-10">
             <h1 class="page-title">Designs</h1>
         </section>
