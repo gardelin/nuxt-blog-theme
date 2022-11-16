@@ -1,5 +1,5 @@
 <template>
-    <section class="mx-auto max-w-6xl flex flex-col align-center justify-center px-12">
+    <section class="mx-auto max-w-7xl flex flex-col align-center justify-center px-12">
         <p class="font-black text-indigo-500 dark:text-indigo-400 font-normal font-space-mono mb-10">Hi, my name is</p>
         <h1 class="font-black text-7xl text-indigo-700 dark:text-white mb-5">Roko Labrović.</h1>
         <h1 class="font-black text-7xl text-indigo-400 dark:text-indigo-200 mb-5">I build things for the web.</h1>
