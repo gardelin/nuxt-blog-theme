@@ -22,7 +22,7 @@
     const route = useRoute();
     const limit = perPage().value;
     const total = totalArticles();
-    let page = ref(parseInt(route.query.page) || 1);
+    let page = ref(parseInt(route.query.page || 1));
 
     if (!total.value) {
         const articles = await queryContent('articles').only([]).find();

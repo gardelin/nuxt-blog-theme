@@ -2,13 +2,13 @@
     <section class="flex justify-center mt-4 space-x-2 mb-10 mt-auto">
         <ul v-if="total">
             <li class="prev">
-                <NuxtLink :class="{ disabled: !showPrev }" :to="{ query: { page: parseInt($route.query.page) - 1 } }">Prev</NuxtLink>
+                <NuxtLink :class="{ disabled: !showPrev }" :to="{ query: { page: page - 1 } }">Prev</NuxtLink>
             </li>
             <li v-if="Math.ceil(total / limit) > 1" v-for="n in Math.ceil(total / limit)">
                 <NuxtLink :class="{ active: isActive(n) }" :to="{ query: { page: n } }">{{ n }}</NuxtLink>
             </li>
             <li class="next">
-                <NuxtLink :class="{ disabled: !showNext }" :to="{ query: { page: parseInt($route.query.page) + 1 } }">Next</NuxtLink>
+                <NuxtLink :class="{ disabled: !showNext }" :to="{ query: { page: page + 1 } }">Next</NuxtLink>
             </li>
         </ul>
     </section>
@@ -27,14 +27,12 @@
     });
 
     const route = useRoute();
-    const page = parseInt(route.query.page || 1);
-    let showPrev = ref(page > 1);
-    let showNext = ref(page < props.total / props.limit);
+    const page = ref(parseInt(route.query.page || 1));
+    let showPrev = ref(page.value > 1);
+    let showNext = ref(page.value < props.total / props.limit);
 
     const isActive = n => {
-        let page = route.query.page || 1;
-
-        if (page == n) {
+        if (page.value == n) {
             return true;
         }
 
@@ -43,14 +41,16 @@
 
     watch(
         () => route.query.page,
-        page => {
-            if (page > 1) {
+        param => {
+            page.value = param;
+
+            if (page.value > 1) {
                 showPrev.value = true;
             } else {
                 showPrev.value = false;
             }
 
-            if (page < props.total / props.limit) {
+            if (page.value < props.total / props.limit) {
                 showNext.value = true;
             } else {
                 showNext.value = false;
