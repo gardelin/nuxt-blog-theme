@@ -1,5 +1,5 @@
 <template>
-    <a href="#" class="text-copy-primary hover:text-gray-600" @click="onClick">
+    <a href="#" class="text-copy-primary hover:text-gray-600" @click.prevent="onClick">
         <Icon v-if="colorMode.value === 'light'" name="akar-icons:sun" />
         <Icon v-else name="bytesize:moon" />
     </a>
