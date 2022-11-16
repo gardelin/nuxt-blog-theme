@@ -38,7 +38,7 @@
     onMounted(() => {
         // https://github.com/nuxt/framework/issues/3587
         setTimeout(() => {
-            document.querySelectorAll('h2[id], h3[id]').forEach(heading => {
+            document.querySelectorAll('h2[id], h3[id], h4[id], h5[id]').forEach(heading => {
                 useIntersectionObserver(heading, ([{ isIntersecting }]) => {
                     const id = heading.getAttribute('id');
 
